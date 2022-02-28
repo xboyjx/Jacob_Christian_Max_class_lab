@@ -7,6 +7,10 @@ class Team:
         self.players = players
         self.coach = coach
         self.points = 0
+        self.win_points = {
+            True : 3,
+            False : 0
+        }
 
     def add_player(self, new_player):
         self.players.append(new_player)   
@@ -19,3 +23,6 @@ class Team:
                 return found
 
         return found
+
+    def play_game(self, win_status):
+        self.points += self.win_points[win_status]
